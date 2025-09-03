@@ -7,7 +7,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Attendees page initializing...');
             loadEvents();
-            addSampleAttendees(); // Add sample data for demonstration
             updateEventsDisplay();
         });
 
@@ -27,22 +26,6 @@
                 console.error('Error loading events:', error);
                 allEvents = [];
                 filteredEvents = [];
-            }
-        }
-
-        // Add sample attendees for demonstration
-        function addSampleAttendees() {
-            allEvents.forEach(event => {
-                if (!event.attendees || event.attendees.length === 0) {
-                    event.attendees = generateSampleAttendees(event);
-                }
-            });
-            
-            // Save updated events back to localStorage
-            try {
-                localStorage.setItem('savedEvents', JSON.stringify(allEvents));
-            } catch (error) {
-                console.error('Error saving events with sample attendees:', error);
             }
         }
 
@@ -795,4 +778,5 @@
         Keyboard shortcuts:
         • Ctrl/Cmd + F: Focus search
         • Escape: Clear search
+
         `);
