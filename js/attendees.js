@@ -7,6 +7,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Attendees page initializing...');
             loadEvents();
+        addSampleAttendees();
             updateEventsDisplay();
         });
 
@@ -165,6 +166,22 @@
                     </div>
                 </div>
             `;
+        }
+
+        // Add sample attendees for demonstration
+        function addSampleAttendees() {
+            allEvents.forEach(event => {
+                if (!event.attendees || event.attendees.length === 0) {
+                    event.attendees = generateSampleAttendees(event);
+                }
+            });
+            
+            // Save updated events back to localStorage
+            try {
+                localStorage.setItem('savedEvents', JSON.stringify(allEvents));
+            } catch (error) {
+                console.error('Error saving events with sample attendees:', error);
+            }
         }
 
         // Create attendee card
@@ -780,3 +797,4 @@
         • Escape: Clear search
 
         `);
+
