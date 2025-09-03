@@ -33,7 +33,7 @@
         // Generate sample attendees for an event
         function generateSampleAttendees(event) {
             const sampleNames = [
-                { firstName: 'Isabel', lastName: 'Chen', email: '05isabelchen@berkeley.edu', phone: '(510) 960-9909' }
+                { firstName: 'John', lastName: 'Smith', email: 'john.smith@berkeley.edu', phone: '(123)-456-7890' }
             ];
 
             const statuses = ['confirmed', 'pending', 'declined'];
@@ -797,4 +797,5 @@
         • Escape: Clear search
 
         `);
+
 
